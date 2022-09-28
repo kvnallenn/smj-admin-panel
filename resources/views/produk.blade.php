@@ -192,7 +192,12 @@
                                             <td>{{ $kunci->kuantitas_produk }}</td>
                                             <td>{{ $kunci->unit_produk }}</span></td>
                                             <td>Rp {{ $kunci->harga_produk }}</td>
-                                            <td><a class="btn btn-info" href="{{ url('produk/'.$kunci->id.'/edit') }}">Update</a></td>
+                                            <td><a class="btn btn-info" href="{{ url('produk/'.$kunci->id.'/edit') }}">Edit</a></td>
+                                            <form action="produk/{{ $kunci->id }}" method="post">
+                                              @method('delete')
+                                              @csrf 
+                                              <td><button type="submit" class="btn btn-warning">Delete</a></td>
+                                              </form>
                                         </tr>
 
                                      @endforeach

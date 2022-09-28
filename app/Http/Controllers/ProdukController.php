@@ -111,6 +111,8 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $model = Produk::destroy($id);
+       return redirect('produk');
+       
     }
 }
